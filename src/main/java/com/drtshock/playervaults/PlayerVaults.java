@@ -21,7 +21,6 @@ package com.drtshock.playervaults;
 import com.drtshock.playervaults.commands.ConsoleCommand;
 import com.drtshock.playervaults.commands.ConvertCommand;
 import com.drtshock.playervaults.commands.DeleteCommand;
-import com.drtshock.playervaults.commands.HelpMeCommand;
 import com.drtshock.playervaults.commands.SignCommand;
 import com.drtshock.playervaults.commands.SignSetInfo;
 import com.drtshock.playervaults.commands.VaultCommand;
@@ -251,7 +250,6 @@ public class PlayerVaults extends JavaPlugin {
         }
 
         this.metricsSimplePie("signs", () -> getConf().isSigns() ? "enabled" : "disabled");
-        this.metricsSimplePie("cats", () -> HelpMeCommand.likesCats ? "meow" : "purr");
         this.metricsSimplePie("cleanup", () -> getConf().getPurge().isEnabled() ? "enabled" : "disabled");
 
         this.metricsDrillPie("block_items", () -> {
@@ -295,7 +293,6 @@ public class PlayerVaults extends JavaPlugin {
         this.getLogger().info("Loaded! Took " + (System.currentTimeMillis() - start) + "ms");
 
         this.updateCheck = new Gson().toJson(update);
-        if (!HelpMeCommand.likesCats) return;
         new BukkitRunnable() {
             @Override
             public void run() {

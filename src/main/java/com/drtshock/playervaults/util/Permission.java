@@ -15,6 +15,9 @@ public class Permission {
     public static final String SIGNS_USE = PREFIX + "signs.use";
     public static final String SIGNS_SET = PREFIX + "signs.set";
 
+    public static final String USE_EXACT_VAULT_PERMISSION = PREFIX + "use.exactvault";
+    public static final String USE_VAULT_PERMISSION = PREFIX + "exact.vault.";
+
     private static final String AMOUNT_PREFIX = PREFIX + "amount.";
     private static final String SIZE_PREFIX = PREFIX + "size.";
 

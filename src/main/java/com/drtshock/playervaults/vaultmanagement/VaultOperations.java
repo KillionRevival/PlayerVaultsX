@@ -78,6 +78,10 @@ public class VaultOperations {
      * @return Whether or not they have permission.
      */
     public static boolean checkPerms(CommandSender sender, int number) {
+        if (sender.hasPermission(Permission.USE_EXACT_VAULT_PERMISSION)) {
+            return sender.hasPermission(Permission.USE_VAULT_PERMISSION + number);
+        }
+
         if (sender.hasPermission(Permission.amount(number))) {
             return true;
         }
